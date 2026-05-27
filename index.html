@@ -55,8 +55,31 @@
         .section-title::before { content: ""; display: inline-block; width: 4px; height: 18px; background: var(--primary-orange); margin-right: 8px; }
 
         .jobs-list { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .job-item { padding: 10px 0; border-bottom: 1px dashed #ddd; display: flex; justify-content: space-between; align-items: center; }
-        .job-item:last-child { border-bottom: none; }
+        .job-item { 
+            padding: 10px 0; 
+            border-bottom: 1px dashed #ddd; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            gap: 10px; /* Tạo khoảng cách an toàn giữa tên việc và trạng thái */
+        }
+        .job-name { 
+            font-weight: 600; 
+            color: #222; 
+            font-size: 14px; /* Giảm nhẹ 1px cho tên việc để không chèn ép nút trạng thái trên điện thoại */
+            line-height: 1.4;
+        }
+        .job-status { 
+            background: #E6F4EA; 
+            color: #137333; 
+            font-size: 11px; 
+            padding: 3px 8px; 
+            border-radius: 12px; 
+            font-weight: bold; 
+            white-space: nowrap; /* Ép buộc chữ "Đang tuyển" luôn nằm trên 1 dòng, không bao giờ nhảy dòng */
+            flex-shrink: 0; /* Không cho phép nút này bị bóp nghẹt */
+            animation: chomp_sang 1.5s infinite alternate; 
+        }
         .job-name { font-weight: 600; color: #222; }
         .job-status { background: #E6F4EA; color: #137333; font-size: 11px; padding: 2px 8px; border-radius: 12px; font-weight: bold; }
 
@@ -163,10 +186,12 @@
 
     </div>
 
-    <div class="footer" style="padding: 15px 20px; line-height: 1.5;">
-        <p style="margin: 0 0 6px 0; font-weight: 500;">Phòng Nhân Sự Eagle Nice Việt Nam © 2026</p>
-        <p style="margin: 0 0 4px 0; color: #555;">📞 Hotline: 0326014417 (Ms Như) &nbsp;|&nbsp; ✉️ Email: Hr04@eaglenice.vn</p>
-        <p style="margin: 0; color: #555;">📞 Hotline: 0367932625 (Mr Phi) &nbsp;|&nbsp; ✉️ Email: Hr09@eaglenice.vn</p>
+    <div class="footer" style="padding: 15px; text-align: center; font-size: 12px; line-height: 1.8; color: #666; margin-top: 20px;">
+        <div style="font-weight: bold; color: #333; margin-bottom: 6px;">Phòng Nhân Sự Eagle Nice Việt Nam © 2026</div>
+        <div style="background: #f8f9fa; padding: 8px; border-radius: 6px; display: inline-block; text-align: left; max-width: 100%; box-sizing: border-box;">
+            <div style="margin-bottom: 4px;">📞 <strong>Hotline:</strong> 0326014417 (Ms Như) <span style="color:#ccc; margin:0 4px;">|</span> ✉️ <strong>Email:</strong> Hr04@eaglenice.vn</div>
+            <div>📞 <strong>Hotline:</strong> 0367932625 (Mr Phi) <span style="color:#ccc; margin:0 4px;">|</span> ✉️ <strong>Email:</strong> Hr09@eaglenice.vn</div>
+        </div>
     </div>
 </body>
 </html>
